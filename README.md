@@ -1,5 +1,5 @@
 <div align="center">
-  <img style="height: 250px;" src="https://raw.githubusercontent.com/Ict00/mini-rip/refs/heads/main/MacroRipLogo.png">
+  <img style="height: 250px;" src="https://raw.githubusercontent.com/Ict00/macro-rip/refs/heads/main/MacroRipLogo.png">
 </div>
 
 ------
