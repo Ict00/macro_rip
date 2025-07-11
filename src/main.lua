@@ -24,9 +24,22 @@ local function run()
         along with this program.  If not, see <https://www.gnu.org/licenses/>.]])
         os.exit(0)
     end
-    local script = AttemptRead(arg[1])
-    local lines = Lex(script)
-    local horder_tokens = Parse(lines)
+    local horder_tokens = {}
+
+    local i = 1
+    while i <= #arg do
+        local script = AttemptRead(arg[i])
+        local lines = Lex(script)
+        ht = Parse(lines)
+
+        local j = 1
+        while j <= #ht do
+            table.insert(horder_tokens, ht[j])
+            j = j + 1
+        end
+
+        i = i + 1
+    end
 
     Execute(horder_tokens)
 end
