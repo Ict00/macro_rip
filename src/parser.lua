@@ -2,7 +2,8 @@ local sequences = {
     [ [[\t]] ] = '\t',
     [ [[\n]] ] = '\n',
     [ [[\e]] ] = '\27',
-    [ [[\"]] ] = '"'
+    [ [[\"]] ] = '"',
+    [ [[\]] ] = '\\'
 }
 
 local function escape_string(str)

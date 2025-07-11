@@ -1,4 +1,5 @@
 local errors = {
+    ['CallStackEmpty'] = 'Tried to return from no function (call stack empty)',
     ['NotEnoughArguments'] =
     'To execute ".mrip" files you need to provide the filename to the mrip interpreter as an application argument.',
     ['NotEnoughSigilArguments'] =
@@ -11,7 +12,7 @@ local errors = {
     ['InvalidLabelDefinition'] = 'There is an invalid label definition on line {arg}.',
     ['InvalidSigilArgType'] = 'One (or more) of the arguments provided to the sigil on line {arg} is invalid - a different type of argument was expected.',
     ['TooManySigilArguments'] = 'Too many arguments were provided to the sigil on line {arg}. Lower amount of arguments was expected.',
-    ['IdentifierPointsToNothing'] = 'One of the identifiers found on line {arg} does not point to any actual container (scalar /or/ collection). Perhaps you made a typo?',
+    ['IdentifierPointsToNothing'] = 'One of the identifiers found on line {arg} does not point to any actual container (scalar /or/ collection). Perhaps you made a typo/freed the identifier?',
     ['BadIdentifier'] = 'On line {arg} there is an identifier that upon being unwrapped turned out to be a wrong type of container (scalar or collection). A different type was expected for this specific sigil - perhaps an identifier is a collection, meanwhile just a singular value from a scalar was expected - or the other way around.',
     ['UndefinedLabel'] = 'There is a jump to an undefined label on line {arg}.',
     ['BadArgument'] = 'An argument was given to the sigil on line {arg}, the value of which was expected to be different - that means either lower or greater. This is a universal error for those kinds of situations.'

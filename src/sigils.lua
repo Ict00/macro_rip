@@ -557,5 +557,65 @@ Sigils = {
 
             return ctx
         end
+    },
+
+    -- MACRO-RIP ADDITIONS
+
+    ['~'] = {
+        min_args = 1,
+        callback = function(line_index, ctx, args)
+            for _, arg in ipairs(args) do
+                if ctx.containers[arg.value] then
+                    ctx.containers[arg.value] = nil
+                end
+            end
+
+            return ctx
+        end
+    },
+
+    ['['] = {
+        min_args = 1,
+        max_args = 1,
+        callback = function(line_index, ctx, args)
+            if args[1].type ~= 'Ident' then
+                Panic('InvalidSigilArgType', line_index)
+            end
+
+            if not ctx.labels[args[1].value] then
+                Panic('UndefinedLabel', line_index)
+            end
+
+            ctx.jump_prop = ctx.labels[args[1].value]
+
+            table.insert(ctx.call_stack, line_index)
+
+            return ctx
+        end
+    },
+
+    ['\\'] = {
+        min_args = 0,
+        max_args = 0,
+        callback = function(line_index, ctx, args)
+            os.exit(0)
+
+            return ctx
+        end
+    },
+
+    [']'] = {
+        min_args = 0,
+        max_args = 0,
+        callback = function(line_index, ctx, args)
+            if #ctx.call_stack <= 0 then
+                Panic('CallStackEmpty', line_index)
+            end
+
+            local go_to = table.remove(ctx.call_stack)
+            ctx.jump_prop = go_to+1
+
+            return ctx
+        end
     }
 }

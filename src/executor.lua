@@ -3,7 +3,8 @@ function Execute(hots)
         labels = {},
         containers = {},
         jump_prop = -1, -- for jumping to labels
-        runif_prop = 0 -- for runifs
+        runif_prop = 0, -- for runifs
+        call_stack = {} -- for [ and ]
     }
 
     local j = 1
