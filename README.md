@@ -1,22 +1,19 @@
 <div align="center">
-  <img style="height: 250px;" src="https://raw.githubusercontent.com/tixonochekAscended/mini-rip/refs/heads/main/Mini-rip%20Logo%20Border%20Radiused.png">
+  <img style="height: 250px;" src="https://raw.githubusercontent.com/Ict00/mini-rip/refs/heads/main/MacroRipLogo.png">
 </div>
 
 ------
 # mini-rip — A minimal programming language.
 **mini-rip** is a minimal, esoteric, interpreted programming language the official implementation of which is written in Lua. This project takes heavy inspiration from [T^ (TGlyph)](https://github.com/tixonochekAscended/TGlyph) — another programming language I made. To execute code, you as a programmer use special **sigils**, that are basically one-character symbols at the beginning of each line. Afterwards you pass arguments to that sigil to do certain actions. As I've just mentioned, the language is pretty minimal — however you can easily expand on it yourself so that is not a bad thing. If you are curious, in the source code you'll find a lexer, parser and an abstract executor.
+------
+# !!! MACRO-RIP IS A FORK OF MINI-RIP
+# 🏗️ HEAVILY UNDER CONSTRUCTION
 
 ## 🛠️ Installation
-There are 3 main methods to install the **mini-rip** programming language.
-
-1️⃣ **First Method**: Head into the **Releases** page of this repository. Afterwards, download an archive featuring a pre-built executable of **mini-rip** for your operating system and processor architecture. Extract that archive, make sure to put the executable in your PATH and enjoy programming in this wild language.
-
-2️⃣ **Second Method**: If you don't trust my executables for some reason, fair enough. You can easily **build mini-rip from source** [by using Luanite](https://github.com/tixonochekAscended/luanite) - an amazing tool for working with **any Lua project**. Just create a new luanite project via `luanite init <DirectoryName>`, then copy the contents of the `src/` directory of this repository into the `app/` directory located inside of your newly created Luanite project and use `luanite build` to create a self-contained standalone executable of **mini-rip**. You should be aware that if you don't change the `name` property in your `luanite.project` file, the executable that you have built might be called `unspecified`, but you can just rename it to whatever you like.
-
-3️⃣ **Third Method**: If you don't trust my executables _and_ Luanite for some reason, you can just use **mini-rip** through a **Lua 5.4.6** installation you got on your machine. Just run the `main.lua` file by using a command similar to `lua main.lua` and here you go - you can use mini-rip to execute `.mrip` files.
+Can't be installed right now
 
 ## ⚙️ Usage
-If you have a **mini-rip executable** on your machine, you can easily run `.mrip` files written in **mini-rip** by using the following command:
+If you have a **macro-rip executable** on your machine, you can easily run `.mrip` files written in **mini-rip** by using the following command:
 ```
 mrip <FileName>
 ```
