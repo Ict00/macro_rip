@@ -13,7 +13,7 @@
 Can't be installed right now
 
 ## ⚙️ Usage
-If you have a **macro-rip executable** on your machine, you can easily run `.mrip` files written in **mini-rip** by using the following command:
+If you have a **macro-rip executable** on your machine, you can easily run `.mrip` files written in **macro-rip** by using the following command:
 ```
 mrip <FileName>
 ```
