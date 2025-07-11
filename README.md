@@ -18,7 +18,7 @@
 ## ⚙️ Usage
 If you have a **macro-rip executable** on your machine, you can easily run `.mrip` files written in **macro-rip** by using the following command:
 ```
-mrip <FileName>
+macro-rip <FileName>
 ```
 If you want to get more information regarding the **license of this project**, use `mrip license`.
 ### Read further if you are looking for a guide on how to program in the language itself.
@@ -274,6 +274,27 @@ Jumps to the last `[` invokation, removing it from **Call stack**
 ]
 ```
 Prints 'b' twice
+
+### Multi-file
+Macro-rip supports more than one file
+
+> main.mrip
+```
+& program_start
+[ print_hello
+\
+```
+
+> other.mrip
+```
+& print_hello
+@ msg "Hello, World!\n"
+! msg
+~ msg
+]
+```
+
+To get it working, just `macro-rip main.mrip other.mrip`
 
 -----
 ## ☎️ Community / Contacting the developer / Contributing
