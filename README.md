@@ -11,9 +11,9 @@
 
 ## 🛠️ Installation
 
-1️⃣ **First Method**: If you don't trust my executables for some reason, fair enough. You can easily **build macro-rip from source** [by using Luanite](https://github.com/tixonochekAscended/luanite) - an amazing tool for working with **any Lua project**. Just create a new luanite project via `luanite init <DirectoryName>`, then copy the contents of the `src/` directory of this repository into the `app/` directory located inside of your newly created Luanite project and use `luanite build` to create a self-contained standalone executable of **macro-rip**. You should be aware that if you don't change the `name` property in your `luanite.project` file, the executable that you have built might be called `unspecified`, but you can just rename it to whatever you like.
+1️⃣ **First Method**: **build macro-rip from source** [by using Luanite](https://github.com/tixonochekAscended/luanite) - an amazing tool for working with **any Lua project**. Just create a new luanite project via `luanite init <DirectoryName>`, then copy the contents of the `src/` directory of this repository into the `app/` directory located inside of your newly created Luanite project and use `luanite build` to create a self-contained standalone executable of **macro-rip**. You should be aware that if you don't change the `name` property in your `luanite.project` file, the executable that you have built might be called `unspecified`, but you can just rename it to whatever you like.
 
-2️⃣ **Second Method**: If you don't trust my executables _and_ Luanite for some reason, you can just use **macro-rip** through a **Lua 5.4.6** installation you got on your machine. Just run the `main.lua` file by using a command similar to `lua main.lua` and here you go - you can use macro-rip to execute `.mrip` files.
+2️⃣ **Second Method**: If you don't trust Luanite for some reason, you can just use **macro-rip** through a **Lua 5.4.6** installation you got on your machine. Just run the `main.lua` file by using a command similar to `lua main.lua` and here you go - you can use macro-rip to execute `.mrip` files.
 
 ## ⚙️ Usage
 If you have a **macro-rip executable** on your machine, you can easily run `.mrip` files written in **macro-rip** by using the following command:
