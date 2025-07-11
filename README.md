@@ -21,7 +21,7 @@ If you want to get more information regarding the **license of this project**, u
 ### Read further if you are looking for a guide on how to program in the language itself.
 
 -----
-## 📜 Guide on mini-rip
+## 📜 Guide on macro-rip
 Every single line of code in your `.mrip` file, excluding blank lines, must start with a **sigil**. A sigil is a one-character symbol located at the beginning of each line which decides what this line will do. There are assignment sigils that allow to create new containers (a container is basically a variable), arithmetic sigils that allow to perform math, label & goto sigils that allow to create loop-like before and many more other types of sigils. Each sigil must be followed by **arguments** - either a limited or an unlimited amount - each sigil _can_ have an assigned amount of minimal and maximum arguments. Here is a simple Hello World script with a variable:
 ```
 @ message "Hello, World!\n"
@@ -218,9 +218,63 @@ In this case:
 - `b` is equal to `15, 30, 45`
 - `el2` is equal to `45`
 
+## MACRO-RIP Additions
+
+### `\` Sigil
+**Takes NO arguments**. <br>
+It just ends the program
+```
+@ msg "Hello\n"
+! msg
+\
+! msg
+```
+Prints 'Hello' only once
+
+### `~` Sigil
+**Minimum amount of arguments: `2`**. <br>
+Removes container's content, replacing it by **nil**
+```
+@ msg "Hello\n"
+! msg
+~ msg
+! msg
+```
+There will be an error on 4th line because **msg** container was freed
+
+### `[` Sigil
+**Minimum amount of arguments: `1`**, **maximum amount of arguments: `1`**. <br>
+Similar to `^` sigil, but also puts current position to **Call stack**
+```
+& program_start
+[ print_a
+[ print_a
+\
+& print_a
+@ msg "a"
+! msg
+]
+```
+Prints "a" twice
+
+### `]` Sigil
+**Takes NO arguments**. <br>
+Jumps to the last `[` invokation, removing it from **Call stack**
+```
+& program_start
+[ print_b
+! msg
+\
+& print_b
+@ msg "b"
+! msg
+]
+```
+Prints 'b' twice
+
 -----
 ## ☎️ Community / Contacting the developer / Contributing
-Help is always greatly appreciated - you can use all of Github's features including issues, pull requests and more to contribute to **mini-rip**. If you would ever require any assistance regarding the **mini-rip** programming language or you would just like to join an official community, [we have a discord server.](https://discord.gg/NSK7YJ2R6j). We don't _usually_ speak English there, but we all can and will assist you or just talk to you about whatever you want in English. You can easily contact me as the developer there too.
+Help is always greatly appreciated - you can use all of Github's features including issues, pull requests and more to contribute to **mini-rip**/**macro-rip**. If you would ever require any assistance regarding the **mini-rip**/**macro-rip** programming languages or you would just like to join an official community, [we have a discord server.](https://discord.gg/NSK7YJ2R6j). We don't _usually_ speak English there, but we all can and will assist you or just talk to you about whatever you want in English. You can easily contact me as the developer there too.
 
 ## 📝 Naming
 If you are wondering why the language is called **mini-rip**, then I surely have an answer for you: I got no idea either. A thought just popped into my head a while ago with an idea for a programming language and some nonsensical name, which was **mini-rip**.
